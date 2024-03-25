@@ -1,7 +1,7 @@
 // Function to fetch anime data from URL
 async function fetchAnimeData() {
     try {
-        const response = await fetch('https://otakudesu-zeta.vercel.app/api/otakudesu/');
+        const response = await fetch('https://kumanimeapi.vercel.app/api/otakudesu/');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -21,7 +21,7 @@ async function renderAnimeList() {
     const animeData = await fetchAnimeData();
     animeData.forEach(anime => {
         const listItem = document.createElement("li");
-        listItem.textContent = `${anime.title} - ${anime.episodes} episodes`;
+        listItem.textContent = `${anime.slug} -  episode ${episode.slug}`;
         animeList.appendChild(listItem);
     });
 }
@@ -32,7 +32,7 @@ window.addEventListener("load", renderAnimeList);
 // Register service worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
+        navigator.serviceWorker.register('serviceworker.js')
         .then(registration => {
             console.log('Service Worker registered');
         })
