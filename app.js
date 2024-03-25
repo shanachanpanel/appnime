@@ -1,7 +1,11 @@
 // Function to fetch anime data from URL
 async function fetchAnimeData() {
     try {
-        const response = await fetch('https://kumanimeapi.vercel.app/api/otakudesu/');
+        const response = await fetch('https://kumanimeapi.vercel.app/api/anime/');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const response = await fetch('https://kumanimeapi.vercel.app/api/episode/');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
