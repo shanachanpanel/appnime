@@ -1,0 +1,16 @@
+{
+    "name": "Anime Dashboard",
+    "short_name": "Anime Dash",
+    "description": "Dashboard for anime enthusiasts",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
